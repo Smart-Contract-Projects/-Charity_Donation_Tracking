@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body id="donor-page">
+  <div class="container mt-5">
+    <h1 class="text-center">Donor Dashboard</h1>
+    <p class="lead text-center">Browse verified charities and make a donation.</p>
+
+    <!-- Charity List Section -->
+    <div id="charity-list-section" class="mt-4">
+      <h3>Verified Charities</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Charity ID</th>
+            <th>Name</th>
+            <th>Cause</th>
+            <th>Total Donations</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="charity-list"></tbody>
+      </table>
+    </div>
+
+    <!-- Donation Form Section -->
+    <div id="donation-form-section" class="mt-5" style="display:none;">
+      <h3>Donate to Charity</h3>
+      <form id="donation-form">
+        <div class="mb-3">
+          <label for="donation-charity-id" class="form-label">Charity ID</label>
+          <input type="text" class="form-control" id="donation-charity-id" readonly>
+        </div>
+        <div class="mb-3">
+          <label for="donation-amount" class="form-label">Donation Amount (ETH)</label>
+          <input type="number" step="0.01" class="form-control" id="donation-amount" placeholder="Enter amount to donate" required>
+        </div>
+        <button type="submit" class="btn btn-success">Donate</button>
+        <button type="button" id="cancel-donation" class="btn btn-danger">Cancel</button>
+      </form>
+    </div>
+  </div>
+   <!-- Footer -->
+   <footer>
+    © 2024 Charity Donation Tracking
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5/dist/ethers.umd.min.js"></script>
+  <script src="./donor.js"></script>
+</body>
+</html>
